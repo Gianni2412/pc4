@@ -1,19 +1,67 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - pc4</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .imgsetting {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+
+            float: left;
+            margin-left: 17px;
+        }
+
+        .fa-flag {
+            margin-top: 20px;
+        }
+
+        .fa-eye {
+            margin-top: 20px;
+        }
+
+        .col-lg-4 p {
+            font-size: 2vmin;
+        }
+    </style>
+
 </head>
+
 <body>
+    <div class="container text-center ourservices mt-0">
+        <div class="row rowsetting">
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto ">
+
+                <img
+                    src=" https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Peru_%281825%E2%80%931950%29.svg/270px-Flag_of_Peru_%281825%E2%80%931950%29.svg.png">
+            </div>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto ">
+                <div class="imgsetting d-block m-auto"><i class="fas fa-flag fa-3x text-white"></i>
+
+                </div>
+                <h4>PERU FAILS</h4>
+
+            </div>
+        </div>
+    </div>
+
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">pc4</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -22,7 +70,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                                asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -45,4 +94,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
