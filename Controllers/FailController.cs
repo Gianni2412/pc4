@@ -1,13 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
+using pc4.Data;
+using pc4.Models;
 namespace pc4.Controllers
 {
     public class FailController : Controller
     {
+        private ApplicationDbContext _context;
+        public FailController(ApplicationDbContext context){
+            _context= context;
+        }
         public IActionResult SubirFail(){
             return View();
         }
-        
+        [HttpPost]
+        public IActionResult SubirFail(Fail f){
+             if(ModelState.IsValid){
+                _context.Add(f);
+                _context.SaveChanges();
+
+                return RedirectToAction("PaginaPrincipal","Home");
+            }
+            return View(f);
+        }
+
          public IActionResult ComentarioFoto(){
             return View();
         }
