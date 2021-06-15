@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container" style="background-color:red;" >
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">pc4</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -19,18 +19,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Fail" asp-action="SubirFail">Subir fail</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Fail" asp-action="SubirFail">Subir fail</a>
                         </li>
                          @if(!User.Identity.IsAuthenticated){
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CrearCuenta">Registar Usuario</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Cuenta" asp-action="CrearCuenta">Registar Usuario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="IniciarSesion">Iniciar Sesión</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Cuenta" asp-action="IniciarSesion">Iniciar Sesión</a>
                         </li>
                         }else{
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CerrarSesion">Cerrar Sesión</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Cuenta" asp-action="CerrarSesion">Cerrar Sesión</a>
                         </li>
                         }
 
