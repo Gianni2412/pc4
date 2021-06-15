@@ -18,7 +18,7 @@ namespace pc4.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult PaginaPrincipal()
         {
             return View();
         }
