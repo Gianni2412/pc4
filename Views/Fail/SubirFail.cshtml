@@ -1,0 +1,28 @@
+@model Fail
+<h1>Subir Fail</h1>
+
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Titulo">Titulo:</label>
+        <input asp-for="Titulo" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Usuario">Usuario:</label>
+        <input  asp-for="Usuario" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Foto">Imagen:</label>
+        <input  asp-for="Foto" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Comentario">Comentario:</label>
+        <input asp-for="Comentario" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Fecha">Fecha:</label>
+        <input asp-for="Fecha" class="form-control">
+    </div>
+    <button class="btn btn-primary">Subir Fail</button>
+    
+</form>
