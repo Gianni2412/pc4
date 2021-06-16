@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using pc4.Data;
@@ -19,13 +20,13 @@ namespace pc4.Controllers
                 _context.Add(f);
                 _context.SaveChanges();
 
-                return RedirectToAction("PaginaPrincipal","Home");
+                return RedirectToAction("SubirFail");
             }
             return View(f);
         }
-
-         public IActionResult ComentarioFoto(){
-            return View();
+        public IActionResult ComentarioFoto(){
+            var comentarios= _context.Comentarios.OrderBy(x => x.Id).ToList();
+            return View(comentarios);
         }
     }
 }
