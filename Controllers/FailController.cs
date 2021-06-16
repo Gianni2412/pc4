@@ -8,15 +8,19 @@ namespace pc4.Controllers
     public class FailController : Controller
     {
         private ApplicationDbContext _context;
-        public FailController(ApplicationDbContext context){
-            _context= context;
+        public FailController(ApplicationDbContext context)
+        {
+            _context = context;
         }
-        public IActionResult SubirFail(){
+        public IActionResult SubirFail()
+        {
             return View();
         }
         [HttpPost]
-        public IActionResult SubirFail(Fail f){
-             if(ModelState.IsValid){
+        public IActionResult SubirFail(Fail f)
+        {
+            if (ModelState.IsValid)
+            {
                 _context.Add(f);
                 _context.SaveChanges();
 
@@ -24,9 +28,9 @@ namespace pc4.Controllers
             }
             return View(f);
         }
-        public IActionResult ComentarioFoto(){
-            var comentarios= _context.Comentarios.OrderBy(x => x.Id).ToList();
-            return View(comentarios);
+        public IActionResult ComentarioFoto()
+        {
+            return View();
         }
     }
 }
