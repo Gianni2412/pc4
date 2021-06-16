@@ -10,7 +10,7 @@ using pc4.Data;
 namespace pc4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210615230358_InitialCreate")]
+    [Migration("20210615235351_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -261,7 +261,7 @@ namespace pc4.Migrations
 
                     b.HasIndex("ComentarioId");
 
-                    b.ToTable("Fails");
+                    b.ToTable("Fail");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

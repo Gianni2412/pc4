@@ -259,7 +259,7 @@ namespace pc4.Migrations
 
                     b.HasIndex("ComentarioId");
 
-                    b.ToTable("Fails");
+                    b.ToTable("Fail");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

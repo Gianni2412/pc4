@@ -24,9 +24,9 @@ namespace pc4.Controllers
         }
 
 
-        public IActionResult PaginaPrincipal()
+        public IActionResult Index()
         {
-            var fails = _context.Fails.Where(x => x.Fecha.AddDays(5) >= DateTime.Now).ToList();
+            var fails = _context.Fail.Where(x => x.Fecha.AddDays(5) >= DateTime.Now).ToList();
             return View(fails);
         }
 

@@ -14,7 +14,7 @@ namespace pc4.Data
         {
         }
 
-        public DbSet<pc4.Models.Fail> Fails { get; set; }
+        public DbSet<pc4.Models.Fail> Fail { get; set; }
 
         public DbSet<pc4.Models.Comentario> Comentarios { get; set; }
 
