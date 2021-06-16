@@ -1,101 +1,32 @@
 ﻿@model List<Fail>
 
-<!DOCTYPE html>
-<html lang="en">
+@{
+    ViewData["Title"] = "Home Page";
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Fails</title>
-</head>
+@if (Model.Count() == 0)
+{
+    <p>No existen Fails para mostrar :( </p>
+}
+else
+{
 
-<body>
-    <style>
-        .content-table {
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.9em;
-            min-width: 400px;
-            border-radius: 5px 5px 0 0;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    <div class="row">
+        @foreach (var Fail in Model)
+        {
+            <div class="col-4 text-center">
+                
+                <h2>@Fail.Titulo</h2>
+                <p>@Fail.Usuario</p>
+                <img src="@Fail.Foto" class="img-fluid" />
+              
+
+            </div>
         }
 
-        .content-table thead tr {
-            background-color: #009879;
-            color: white;
-            text-align: left;
-            font-weight: bold;
-        }
 
-        .content-table thead th,
-        .content-table td {
-            padding: 12px 15px;
-        }
-
-        .content-table tbody tr {
-            border-bottom: 1px solid #dddddd;
-        }
-
-        .content-table tbody tr:nth-of-type(even) {
-            background-color: #f3f3f3;
-        }
-
-        .content-table tbody tr:last-of-type {
-            border-bottom: 2px solid #009879;
-        }
-
-        .content-table tbody tr .active-row {
-            font-weight: bold;
-            color: #009879;
-        }
-    </style>
-
-    <h1>Lista de Fails</h1>
-    @if (Model.Count == 0)
-    {
-        <div class="alert alert-warming text-center">Aun no hay Fails ingresados</div>
-    }
-    else
-    {
-        <table class="content-table">
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Nombre del usuario</th>
-                    <th>Imagen</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody>
-                @foreach (var ma in Model)
-                {
-                    <tr class="active-row">
-
-                        <td>@ma.Titulo</td>
-                        <td>@ma.Usuario</td>
-                        <td>
-                            <div><img src="@ma.Foto" style="width:100px;height:100px;" /></div>
-                        </td>
-
-
-                    </tr>
-                }
-            </tbody>
-
-
-        </table>
-    }
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+    </div>
+    <br>
+    <br>
+    <br>
+}
